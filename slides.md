@@ -109,27 +109,31 @@ h1 {
 </style>
 ---
 
-# Navigation
+# Fases de desarrollo de software
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
+La metodología para el desarrollo de software es un modo sistemático de realizar, gestionar y administrar un proyecto para llevarlo a cabo con grandes posibilidades de éxito. Esta sistematización indica cómo se divide un proyecto en módulos más pequeños para normalizar cómo se administra el mismo.
 
-### Keyboard Shortcuts
+<h4 v-click="1" class="py-4">Modelo en cascada</h4>
 
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
+<div v-click="1" class="border-red-800 border-2 text-sm p-2 text-red-800 absolute">
+  Planificación
+</div>
+<div v-click="1" class="border-orange-600 border-2 text-sm p-2 transform text-orange-600 translate-y-12 translate-x-14 absolute">
+  Análisis
+</div>
+<div v-click="1" class="border-green-500 border-2 text-sm p-2 transform text-green-500 translate-y-24 translate-x-28 absolute">
+  Diseño
+</div>
+<div v-click="1" class="border-gray-700 border-2 text-sm p-2 transform text-gray-700 translate-y-36 translate-x-42 absolute">
+  Implementación
+</div>
+<div v-click="1" class="border-blue-500 border-2 text-sm p-2 transform text-blue-500 translate-y-48 translate-x-56 absolute">
+  Verificación
+</div>
 
-<!-- https://sli.dev/guide/animations.html#click-animations -->
-<img
-  v-click
-  class="opacity-50 -bottom-9 -left-7 w-80 absolute"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-/>
-<p v-after class="opacity-30 transform bottom-23 left-45 -rotate-10 absolute">Here!</p>
+<arrow v-click="1" x2="250" y2="460" x1="60" y1="290" color="#55c" width="2" />
 
+<img v-click="2" src="/sdlc.png" class="transform w-64 translate-x-120">
 ---
 layout: image-right
 image: https://source.unsplash.com/collection/94734566/1920x1080
