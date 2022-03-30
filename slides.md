@@ -26,17 +26,17 @@ drawings:
 Presentation slides for developers
 
 <div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
+  <span @click="$slidev.nav.next" class="rounded cursor-pointer py-1 px-2" hover="bg-white bg-opacity-10">
     Press Space for next page <carbon:arrow-right class="inline"/>
   </span>
 </div>
 
-<div class="abs-br m-6 flex gap-2">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
+<div class="flex m-6 gap-2 abs-br">
+  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl opacity-50 icon-btn !border-none !hover:text-white">
     <carbon:edit />
   </button>
   <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub"
-    class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
+    class="text-xl opacity-50 icon-btn !border-none !hover:text-white">
     <carbon-logo-github />
   </a>
 </div>
@@ -46,16 +46,18 @@ The last comment block of each slide will be treated as slide notes. It will be 
 -->
 
 ---
+clicks: 8
+---
 
 # Que es una aplicación web?
 
 Una aplicación web es un programa que se almacena en un servidor remoto y se entrega a través de la interfaz de navegador.
 
-<div v-click="2" class="flex flex-col absolute items-center">
-  <h2 class="!text-xl">CLIENTE</h2>
-  <p class="!my-1">frontend</p>
-  <img src="public/frontend.png" class="h-26">
-  <ul class="text-sm mt-4">
+<div class="flex flex-col absolute items-center">
+  <h2 v-click="3" class="text-gray-600 !text-xl">CLIENTE</h2>
+  <p v-click="3" class="text-gray-600 !my-1">frontend</p>
+  <img v-click="3" src="/frontend.png" class="h-26">
+  <ul v-click="4" class="mt-4 text-sm text-gray-500">
     <li><logos-html5 /> HTML</li>
     <li><logos-css3 /> CSS</li>
     <li><logos-javascript /> JavaScript</li>
@@ -64,11 +66,11 @@ Una aplicación web es un programa que se almacena en un servidor remoto y se en
   </ul>
 </div>
 
-<div v-click="1" class="flex flex-col absolute items-center left-124">
-  <h2 class="!text-xl">SERVIDOR</h2>
-  <p class="!my-1">backend</p>
-  <img src="public/backend.png" class="h-28">
-  <ul class="text-sm mt-4">
+<div class="flex flex-col left-124 absolute items-center">
+  <h2 v-click="1" class="text-gray-600 !text-xl">SERVIDOR</h2>
+  <p v-click="1" class="text-gray-600 !my-1">backend</p>
+  <img v-click="1" src="/backend.png" class="h-28">
+  <ul v-click="2" class="mt-4 text-sm text-gray-500">
     <li><logos-go /> Go</li>
     <li><logos-jwt-icon /> JWT</li>
     <li><logos-oracle /> Oracle</li>
@@ -76,17 +78,17 @@ Una aplicación web es un programa que se almacena en un servidor remoto y se en
     <li><logos-docker-icon /> docker</li>
   </ul>
 </div>
-<img v-click="1" src="public/database.png" class="absolute h-28 left-200 top-62">
+<img v-click="6" src="/database.png" class="h-28 top-62 left-200 absolute">
 
-<arrow v-click="3" x1="260" y1="260" x2="480" y2="260" color="#55c" width="2" />
-<p v-click="3" class="absolute h-26 text-xs left-65 top-62">http://xp25/ifs/ot/active?planta=2000</p>
-<arrow v-click="4" x1="620" y1="260" x2="780" y2="260" color="#55c" width="2" />
-<p v-click="4" class="absolute h-26 text-xs left-155 top-62">SELECT * FROM active_work...</p>
+<arrow v-click="5" x1="260" y1="260" x2="480" y2="260" color="#55c" width="2" />
+<p v-click="5" class="h-26 text-xs top-62 left-65 text-gray-400 absolute">http://xp25/ifs/ot/active?planta=2000</p>
+<arrow v-click="6" x1="620" y1="260" x2="780" y2="260" color="#55c" width="2" />
+<p v-click="6" class="h-26 text-xs top-62 left-155 text-gray-400 absolute">SELECT * FROM active_work...</p>
 
-<arrow v-click="5" x2="620" y2="320" x1="780" y1="320" color="#55c" width="2" />
-<arrow v-click="6" x2="260" y2="320" x1="480" y1="320" color="#55c" width="2" />
+<arrow v-click="7" x2="620" y2="320" x1="780" y1="320" color="#55c" width="2" />
+<arrow v-click="8" x2="260" y2="320" x1="480" y1="320" color="#55c" width="2" />
 
-<pre v-click="6" class="text-xs absolute top-80 left-70">
+<pre v-click="8" class="text-xs top-80 left-70 text-gray-400 absolute">
 [
   { ot: 123450,
     componente: 'TL91L001',
@@ -123,10 +125,10 @@ Hover on the bottom-left corner to see the navigation's controls panel, [learn m
 <!-- https://sli.dev/guide/animations.html#click-animations -->
 <img
   v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
+  class="opacity-50 -bottom-9 -left-7 w-80 absolute"
   src="https://sli.dev/assets/arrow-bottom-left.svg"
 />
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
+<p v-after class="opacity-30 transform bottom-23 left-45 -rotate-10 absolute">Here!</p>
 
 ---
 layout: image-right
@@ -172,7 +174,7 @@ function updateUser(id: number, update: User) {
 
 # Components
 
-<div grid="~ cols-2 gap-4">
+<div grid="~ gap-4 cols-2">
 <div>
 
 You can use Vue components directly inside your slides.
@@ -209,7 +211,7 @@ class: px-20
 
 Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
 
-<div grid="~ cols-2 gap-2" m="-t-2">
+<div grid="~ gap-2 cols-2" m="-t-2">
 
 ```yaml
 ---
@@ -249,33 +251,33 @@ Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
 </div>
 ```
 
-<div class="w-60 relative mt-6">
-  <div class="relative w-40 h-40">
+<div class="mt-6 w-60 relative">
+  <div class="h-40 w-40 relative">
     <img
       v-motion
       :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
       :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
+      class="top-0 right-0 bottom-0 left-0 absolute"
       src="https://sli.dev/logo-square.png"
     />
     <img
       v-motion
       :initial="{ y: 500, x: -100, scale: 2 }"
       :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
+      class="top-0 right-0 bottom-0 left-0 absolute"
       src="https://sli.dev/logo-circle.png"
     />
     <img
       v-motion
       :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
       :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
+      class="top-0 right-0 bottom-0 left-0 absolute"
       src="https://sli.dev/logo-triangle.png"
     />
   </div>
 
   <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
+    class="top-14 left-40 text-5xl text-[#2B90B6] -z-1 absolute"
     v-motion
     :initial="{ x: -80, opacity: 0}"
     :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
@@ -342,7 +344,7 @@ $$
 
 You can create diagrams / graphs from textual descriptions, directly in your Markdown.
 
-<div class="grid grid-cols-3 gap-10 pt-4 -mb-6">
+<div class="-mb-6 grid pt-4 gap-10 grid-cols-3">
 
 ```mermaid {scale: 0.5}
 sequenceDiagram
